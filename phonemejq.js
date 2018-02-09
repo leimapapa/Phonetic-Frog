@@ -164,12 +164,21 @@ function wssSlide()
 
 
 function playit(){
-//replaces the outputarea0 (animation with the pictures from the folder. Defaults to whatever the "gz" variable is set to.)
+//replaces the outputarea0 (animation) with the pictures from the folder. Defaults to whatever the "gz" variable is set to.
 var striii = document.getElementById("outputarea0").innerHTML;
 
-var phonemic2 = striii.replace(/aa|ah|ao|eh|hh|ih|k|uh/g, '<img src="./imgz1/' +gz1 + '/1.png" class="img2">~').replace(/ae|ay|ey|iy/g, '<img src="./imgz1/' + gz1 + '/2.png" class="img2">~').replace(/aw|ow|oy|uw|w/g, '<img src="./imgz1/' + gz1 + '/3.png" class="img2">~').replace(/ch|er|jh|r(?!c)|sh|y|zh/g, '<img src="./imgz1/' + gz1 + '/8.png" class="img2">~').replace(/b|m(?!age|g)|p(?!ng)/g, '<img src="./imgz1/' + gz1 + '/4.png" class="img2">~').replace(/f|v/g, '<img src="./imgz1/' + gz1 + '/6.png" class="img2">~').replace(/dh|l(?!ass)|th/g, '<img src="./imgz1/' + gz1 + '/5.png" class="img2">~').replace(/d|g(?!"|z|2|\ss)|n(?!g)|ng(?!")|s(?!r|s|=)|t|z(?!z|1)/g, '<img src="./imgz1/' +gz1 + '/7.png" class="img2">~').replace(/\s(?!cla|src)/g, '<img src="./imgz1/' +gz1 + '/0.png" class="img2">~').replace(/-/g, '');
+var phonemic = striii.replace(/aa|ah|ao|eh|hh|ih|k|uh/g, '<img src="./imgz1/' +gz1 + '/1.png" class="img2">~');
+var phonemic2 = phonemic.replace(/ae|ay|ey|iy/g, '<img src="./imgz1/' + gz1 + '/2.png" class="img2">~');
+var phonemic3 = phonemic2.replace(/aw|ow|oy|uw|w/g, '<img src="./imgz1/' + gz1 + '/3.png" class="img2">~');
+var phonemic4 = phonemic3.replace(/ch|er|jh|r(?!c)|sh|y|zh/g, '<img src="./imgz1/' + gz1 + '/8.png" class="img2">~');
+var phonemic5 = phonemic4.replace(/b|m(?!age|g)|p(?!ng)/g, '<img src="./imgz1/' + gz1 + '/4.png" class="img2">~');
+var phonemic6 = phonemic5.replace(/f|v/g, '<img src="./imgz1/' + gz1 + '/6.png" class="img2">~');
+var phonemic7 = phonemic6.replace(/dh|l(?!ass)|th/g, '<img src="./imgz1/' + gz1 + '/5.png" class="img2">~');
+var phonemic8 = phonemic7.replace(/d|g(?!"|z|2|\ss)|n(?!g)|ng(?!")|s(?!r|s|=)|t|z(?!z|1)/g, '<img src="./imgz1/' +gz1 + '/7.png" class="img2">~');
+var phonemic9 = phonemic8.replace(/\s(?!cla|src)/g, '<img src="./imgz1/' +gz1 + '/0.png" class="img2">~');
+var phonemic10 = phonemic9.replace(/-/g, '');
 
-word1 = phonemic2.split('~') ;
+word1 = phonemic10.split('~') ;
 //this creates an array split by the ~ so that it only contains image file.
 
 word1.pop();
@@ -178,8 +187,8 @@ word1.pop();
 word1.push('<img src="./imgz1/' + gz1 + '/0.png" class="img2">');
 word1.push('<img src="./imgz1/' + gz1 + '/0.png" class="img2">');
 word1.push('<img src="./imgz1/' + gz1 + '/0.png" class="img2">');
-
 //this adds 3 resting faces to the end of the animation
+
 }
 
 //This is the function intended to create a button with the breakdown of all of the phonemes, which shows the words when you click it (that part doesn't work yet).
@@ -190,16 +199,57 @@ function faces() {
 	var booboo = textfield.value();
 	var r = RiTa.tokenize(booboo);
 
-var phoneme = strr.replace(/aa|ah|ao|eh|er|hh|ih|k|r|uh/g, '<img src="./imgz1/' + gz1 + '/1.png" class="img">').replace(/aw|ow|oy|uw|w/g, '<img src="./imgz1/' + gz1 + '/3.png" class="img">').replace(/ae|ay|ey|iy/g, '<img src="./imgz1/' + gz1 + '/2.png" class="img">').replace(/b|m(?!age|g)|p(?!ng)/g, '<img src="./imgz1/' + gz1 + '/4.png" class="img">').replace(/dh|l(?!ass)|th/g, '<img src="./imgz1/' + gz1 + '/5.png" class="img">').replace(/ch|jh|sh|y|zh/g, '<img src="./imgz1/' + gz1 + '/8.png" class="img">').replace(/f|v/g, '<img src="./imgz1/' + gz1 + '/6.png" class="img">').replace(/d|g(?!"|z|\ss)|n(?!g)|ng(?!")|s(?!r|s|=)|t|z(?!z|1)/g, '<img src="./imgz1/' + gz1 + '/7.png" class="img">').replace(/-/g, '<wbr><span class="im">&#8226;</span><wbr>').replace('^', '<span>^').replace(/\s(?!cla|src)/g, '</span><br/><span class="ui-bar ui-bar-a ui-corner-all">').replace(/(,)/g, '').replace('<span>^</span><br/>','');
-document.getElementById("outputarea2").innerHTML = phoneme;
+var phoneme = strr.replace(/aa|ah|ao|eh|er|hh|ih|k|r|uh/g, '<img src="./imgz1/' + gz1 + '/1.png" class="img">');
+//replaces the open-mouth a's with picture 1.png
 
+var phoneme2 = phoneme.replace(/aw|ow|oy|uw|w/g, '<img src="./imgz1/' + gz1 + '/3.png" class="img">');
+//replaces w's with picture 3.png
+
+var phoneme3 = phoneme2.replace(/ae|ay|ey|iy/g, '<img src="./imgz1/' + gz1 + '/2.png" class="img">');
+//replaces soft a's with picture 2.png
+
+var phoneme4 = phoneme3.replace(/b|m(?!age|g)|p(?!ng)/g, '<img src="./imgz1/' + gz1 + '/4.png" class="img">');
+//replaces b and m with picture 4.png
+
+var phoneme5 = phoneme4.replace(/dh|l(?!ass)|th/g, '<img src="./imgz1/' + gz1 + '/5.png" class="img">');
+//replaces th and l with picture 5.png
+
+var phoneme6 = phoneme5.replace(/ch|jh|sh|y|zh/g, '<img src="./imgz1/' + gz1 + '/8.png" class="img">');
+//replaces y's with picture 8.png
+
+var phoneme7 = phoneme6.replace(/f|v/g, '<img src="./imgz1/' + gz1 + '/6.png" class="img">');
+//replaces f and v with picture 6.png
+
+var phoneme8 = phoneme7.replace(/d|g(?!"|z|\ss)|n(?!g)|ng(?!")|s(?!r|s|=)|t|z(?!z|1)/g, '<img src="./imgz1/' + gz1 + '/7.png" class="img">');
+//replaces d and g with picture 7.png
+
+var phoneme9 = phoneme8.replace(/-/g, '<wbr><span class="im">&#8226;</span><wbr>');
+//replaces dashes between phonemes with dots
+
+var phoneme10 = phoneme9.replace('^', '<span>^');
+//replaces the ^ carat popped in earlier with a beginning span tag
+
+var phoneme11 = phoneme10.replace(/\s(?!cla|src)/g, '</span><br/><span class="ui-bar ui-bar-a ui-corner-all">');
+//replaces the space at the end of the words with the ending span tag
+
+var phoneme12 = phoneme11.replace(/(,)/g, '');
+//replaces remaining commas with spaces
+
+var phoneme13 = phoneme12.replace('<span>^</span><br/>','');
+//replaces extra empty span with ^ carat inside with nothing
+
+document.getElementById("outputarea2").innerHTML = phoneme13;
+//sets the innerHTML of the phonetic faces to the replaced pictures
 }
 
 //Slow and fast buttons which need to be replaced by a slider
 
+//makes animationspeed go slower.
 function slowit() {
 	animationspeed=animationspeed+20;
 }
+
+//makes animationspeed go faster. Haven't yet figured out how to map this to a slider
 function fastit() {
 	animationspeed=animationspeed-20;
 }
